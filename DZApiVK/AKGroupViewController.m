@@ -56,7 +56,7 @@ static NSInteger postsInRequest = 10;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    ///
+    // no changes
     
     self.clearsSelectionOnViewWillAppear = NO;
     
