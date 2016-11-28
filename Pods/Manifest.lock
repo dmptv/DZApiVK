@@ -1,0 +1,47 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - CCBottomRefreshControl (0.5.1):
+    - Masonry (~> 0.6.2)
+  - JSQMessagesViewController (7.3.4):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
+  - Masonry (0.6.4)
+  - SlackTextViewController (1.9.5)
+  - SVPullToRefresh (0.4.1)
+  - SWRevealViewController (2.3.0)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.0)
+  - CCBottomRefreshControl (~> 0.5)
+  - JSQMessagesViewController (~> 7.2)
+  - SlackTextViewController
+  - SVPullToRefresh (~> 0.4)
+  - SWRevealViewController (~> 2.3)
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CCBottomRefreshControl: 57a596348855260f627ffc2b311328ed15b94877
+  JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  SlackTextViewController: fbcdadbb8090673f604484ff5b6eb8d77baed42a
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
+
+PODFILE CHECKSUM: a4c7c6d51c5aeec3b3081c01637e5f01f3a31def
+
+COCOAPODS: 1.1.1
