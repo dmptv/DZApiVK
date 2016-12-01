@@ -32,6 +32,17 @@
 		AB736CC41DD377E2008AAEF8 /* UITableViewCell+CellForContent.m in Sources */ = {isa = PBXBuildFile; fileRef = AB736CC31DD377E2008AAEF8 /* UITableViewCell+CellForContent.m */; };
 		ABC03F931DD0A4F900386218 /* VKAddPostVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC03F921DD0A4F900386218 /* VKAddPostVC.m */; };
 		ABC03F961DD0DD5200386218 /* VKMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC03F951DD0DD5200386218 /* VKMessageVC.m */; };
+		ABE5BEC51DEF2D2A0036F093 /* VKAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE5BEC41DEF2D2A0036F093 /* VKAlbum.m */; };
+		ABE5BED01DEF3B990036F093 /* kit.png in Resources */ = {isa = PBXBuildFile; fileRef = ABE5BEC71DEF3B990036F093 /* kit.png */; };
+		ABE5BED11DEF3B990036F093 /* kit2.png in Resources */ = {isa = PBXBuildFile; fileRef = ABE5BEC81DEF3B990036F093 /* kit2.png */; };
+		ABE5BED21DEF3B990036F093 /* kit3.png in Resources */ = {isa = PBXBuildFile; fileRef = ABE5BEC91DEF3B990036F093 /* kit3.png */; };
+		ABE5BED31DEF3B990036F093 /* kit4.png in Resources */ = {isa = PBXBuildFile; fileRef = ABE5BECA1DEF3B990036F093 /* kit4.png */; };
+		ABE5BED41DEF3B990036F093 /* kit5.png in Resources */ = {isa = PBXBuildFile; fileRef = ABE5BECB1DEF3B990036F093 /* kit5.png */; };
+		ABE5BED51DEF3B990036F093 /* kit6.png in Resources */ = {isa = PBXBuildFile; fileRef = ABE5BECC1DEF3B990036F093 /* kit6.png */; };
+		ABE5BED61DEF3B990036F093 /* kit7.png in Resources */ = {isa = PBXBuildFile; fileRef = ABE5BECD1DEF3B990036F093 /* kit7.png */; };
+		ABE5BED71DEF3B990036F093 /* kit8.png in Resources */ = {isa = PBXBuildFile; fileRef = ABE5BECE1DEF3B990036F093 /* kit8.png */; };
+		ABE5BED81DEF3B990036F093 /* kit9.png in Resources */ = {isa = PBXBuildFile; fileRef = ABE5BECF1DEF3B990036F093 /* kit9.png */; };
+		ABE5BEDB1DF0534D0036F093 /* LineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE5BEDA1DF0534D0036F093 /* LineLayout.m */; };
 		ABF9CE931DDB2D3C001204FF /* VKPostDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF9CE921DDB2D3C001204FF /* VKPostDetailCell.m */; };
 		ABF9CE961DDB6EF0001204FF /* VKCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF9CE951DDB6EF0001204FF /* VKCommentCell.m */; };
 		ABF9CED41DDCACA2001204FF /* VKCommentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF9CED31DDCACA2001204FF /* VKCommentsController.m */; };
@@ -65,6 +76,8 @@
 		ABF9D3D11DCDD728001FC552 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF9D3B91DCDD728001FC552 /* comment.png */; };
 		ABFCFF0A1DEB35020005AB39 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFCFF091DEB35020005AB39 /* DetailViewController.m */; };
 		ABFCFF101DEB4F9D0005AB39 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = ABFCFF0F1DEB4F9D0005AB39 /* back.png */; };
+		ABFCFFF41DEDEAF30005AB39 /* VKPhotosGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFCFFF31DEDEAF30005AB39 /* VKPhotosGroupCell.m */; };
+		ABFCFFF71DEDEBDA0005AB39 /* VKPhotosGroupTC.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFCFFF61DEDEBDA0005AB39 /* VKPhotosGroupTC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +147,19 @@
 		ABC03F921DD0A4F900386218 /* VKAddPostVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAddPostVC.m; sourceTree = "<group>"; };
 		ABC03F941DD0DD5200386218 /* VKMessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMessageVC.h; sourceTree = "<group>"; };
 		ABC03F951DD0DD5200386218 /* VKMessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMessageVC.m; sourceTree = "<group>"; };
+		ABE5BEC31DEF2D2A0036F093 /* VKAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAlbum.h; sourceTree = "<group>"; };
+		ABE5BEC41DEF2D2A0036F093 /* VKAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAlbum.m; sourceTree = "<group>"; };
+		ABE5BEC71DEF3B990036F093 /* kit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kit.png; sourceTree = "<group>"; };
+		ABE5BEC81DEF3B990036F093 /* kit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kit2.png; sourceTree = "<group>"; };
+		ABE5BEC91DEF3B990036F093 /* kit3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kit3.png; sourceTree = "<group>"; };
+		ABE5BECA1DEF3B990036F093 /* kit4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kit4.png; sourceTree = "<group>"; };
+		ABE5BECB1DEF3B990036F093 /* kit5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kit5.png; sourceTree = "<group>"; };
+		ABE5BECC1DEF3B990036F093 /* kit6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kit6.png; sourceTree = "<group>"; };
+		ABE5BECD1DEF3B990036F093 /* kit7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kit7.png; sourceTree = "<group>"; };
+		ABE5BECE1DEF3B990036F093 /* kit8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kit8.png; sourceTree = "<group>"; };
+		ABE5BECF1DEF3B990036F093 /* kit9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kit9.png; sourceTree = "<group>"; };
+		ABE5BED91DF0534D0036F093 /* LineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineLayout.h; sourceTree = "<group>"; };
+		ABE5BEDA1DF0534D0036F093 /* LineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineLayout.m; sourceTree = "<group>"; };
 		ABF9CE911DDB2D3C001204FF /* VKPostDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKPostDetailCell.h; sourceTree = "<group>"; };
 		ABF9CE921DDB2D3C001204FF /* VKPostDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKPostDetailCell.m; sourceTree = "<group>"; };
 		ABF9CE941DDB6EF0001204FF /* VKCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCommentCell.h; sourceTree = "<group>"; };
@@ -175,6 +201,10 @@
 		ABFCFF081DEB35020005AB39 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		ABFCFF091DEB35020005AB39 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		ABFCFF0F1DEB4F9D0005AB39 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		ABFCFFF21DEDEAF30005AB39 /* VKPhotosGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKPhotosGroupCell.h; sourceTree = "<group>"; };
+		ABFCFFF31DEDEAF30005AB39 /* VKPhotosGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKPhotosGroupCell.m; sourceTree = "<group>"; };
+		ABFCFFF51DEDEBDA0005AB39 /* VKPhotosGroupTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKPhotosGroupTC.h; sourceTree = "<group>"; };
+		ABFCFFF61DEDEBDA0005AB39 /* VKPhotosGroupTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKPhotosGroupTC.m; sourceTree = "<group>"; };
 		F5A05F25C04CFFEB81941BC0 /* Pods-DZApiVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DZApiVK.release.xcconfig"; path = "Pods/Target Support Files/Pods-DZApiVK/Pods-DZApiVK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -262,6 +292,8 @@
 				ABF9CED31DDCACA2001204FF /* VKCommentsController.m */,
 				ABFCFF081DEB35020005AB39 /* DetailViewController.h */,
 				ABFCFF091DEB35020005AB39 /* DetailViewController.m */,
+				ABFCFFF51DEDEBDA0005AB39 /* VKPhotosGroupTC.h */,
+				ABFCFFF61DEDEBDA0005AB39 /* VKPhotosGroupTC.m */,
 				AB1C27071DB9107E001D7B82 /* AKServerManager.h */,
 				AB1C27081DB9107E001D7B82 /* AKServerManager.m */,
 				AB1C27151DB9260C001D7B82 /* AKGroupViewController.h */,
@@ -270,6 +302,7 @@
 				AB1C270A1DB91088001D7B82 /* Cells */,
 				AB1C26981DB7D2D2001D7B82 /* Main.storyboard */,
 				AB1C269E1DB7D2D2001D7B82 /* Assets.xcassets */,
+				ABE5BEC61DEF3B990036F093 /* CAT FACE EMOJI copy */,
 				AB1C26A01DB7D2D2001D7B82 /* LaunchScreen.storyboard */,
 				AB1C26A31DB7D2D2001D7B82 /* Info.plist */,
 				AB1C269B1DB7D2D2001D7B82 /* DZApiVK.xcdatamodeld */,
@@ -322,6 +355,8 @@
 				ABF9CE951DDB6EF0001204FF /* VKCommentCell.m */,
 				ABF9CEF81DDDE51C001204FF /* AddComCell.h */,
 				ABF9CEF91DDDE51C001204FF /* AddComCell.m */,
+				ABFCFFF21DEDEAF30005AB39 /* VKPhotosGroupCell.h */,
+				ABFCFFF31DEDEAF30005AB39 /* VKPhotosGroupCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -341,8 +376,12 @@
 				AB21BBF21DC1F48300E215B7 /* VKPhoto.m */,
 				ABF9CEFB1DDE0AF3001204FF /* VKComment.h */,
 				ABF9CEFC1DDE0AF3001204FF /* VKComment.m */,
+				ABE5BEC31DEF2D2A0036F093 /* VKAlbum.h */,
+				ABE5BEC41DEF2D2A0036F093 /* VKAlbum.m */,
 				AB1C271B1DBA1194001D7B82 /* VKAccessToken.h */,
 				AB1C271C1DBA1194001D7B82 /* VKAccessToken.m */,
+				ABE5BED91DF0534D0036F093 /* LineLayout.h */,
+				ABE5BEDA1DF0534D0036F093 /* LineLayout.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -363,6 +402,22 @@
 			children = (
 			);
 			name = Libs;
+			sourceTree = "<group>";
+		};
+		ABE5BEC61DEF3B990036F093 /* CAT FACE EMOJI copy */ = {
+			isa = PBXGroup;
+			children = (
+				ABE5BEC71DEF3B990036F093 /* kit.png */,
+				ABE5BEC81DEF3B990036F093 /* kit2.png */,
+				ABE5BEC91DEF3B990036F093 /* kit3.png */,
+				ABE5BECA1DEF3B990036F093 /* kit4.png */,
+				ABE5BECB1DEF3B990036F093 /* kit5.png */,
+				ABE5BECC1DEF3B990036F093 /* kit6.png */,
+				ABE5BECD1DEF3B990036F093 /* kit7.png */,
+				ABE5BECE1DEF3B990036F093 /* kit8.png */,
+				ABE5BECF1DEF3B990036F093 /* kit9.png */,
+			);
+			path = "CAT FACE EMOJI copy";
 			sourceTree = "<group>";
 		};
 		ABF9D3A11DCDD6DF001FC552 /* images */ = {
@@ -505,33 +560,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABE5BED71DEF3B990036F093 /* kit8.png in Resources */,
 				ABF9D3C61DCDD728001FC552 /* menu.png in Resources */,
 				ABF9D3C71DCDD728001FC552 /* menu@2x.png in Resources */,
+				ABE5BED31DEF3B990036F093 /* kit4.png in Resources */,
+				ABE5BED01DEF3B990036F093 /* kit.png in Resources */,
 				ABF9D3C51DCDD728001FC552 /* bwO158JfT-U.jpg in Resources */,
 				ABF9D3C11DCDD728001FC552 /* Heart-icon-1.png in Resources */,
 				ABFCFF101DEB4F9D0005AB39 /* back.png in Resources */,
 				ABF9D3BE1DCDD728001FC552 /* Folders-icon.png in Resources */,
 				ABF9D3CD1DCDD728001FC552 /* very.png in Resources */,
 				ABF9D3C31DCDD728001FC552 /* Photo-icon-1.png in Resources */,
+				ABE5BED61DEF3B990036F093 /* kit7.png in Resources */,
 				ABF9D3C01DCDD728001FC552 /* heart-empty-icon.png in Resources */,
 				ABF9D3CF1DCDD728001FC552 /* very24.png in Resources */,
 				ABF9D3CE1DCDD728001FC552 /* very32.png in Resources */,
+				ABE5BED21DEF3B990036F093 /* kit3.png in Resources */,
 				AB1C26A21DB7D2D2001D7B82 /* LaunchScreen.storyboard in Resources */,
 				ABF9D3BF1DCDD728001FC552 /* folder.png in Resources */,
+				ABE5BED51DEF3B990036F093 /* kit6.png in Resources */,
 				ABF9D3C81DCDD728001FC552 /* 1.png in Resources */,
 				ABF9D3CC1DCDD728001FC552 /* photo.png in Resources */,
 				ABF9D3BB1DCDD728001FC552 /* Checked@2x.png in Resources */,
 				ABF9D3BC1DCDD728001FC552 /* Unchecked.png in Resources */,
 				ABF9D3BA1DCDD728001FC552 /* Checked.png in Resources */,
 				AB1C269F1DB7D2D2001D7B82 /* Assets.xcassets in Resources */,
+				ABE5BED81DEF3B990036F093 /* kit9.png in Resources */,
 				ABF9D3CB1DCDD728001FC552 /* edit.png in Resources */,
 				AB1C269A1DB7D2D2001D7B82 /* Main.storyboard in Resources */,
 				ABF9D3D01DCDD728001FC552 /* heart.png in Resources */,
 				ABF9D3CA1DCDD728001FC552 /* 3.png in Resources */,
 				ABF9D3D11DCDD728001FC552 /* comment.png in Resources */,
+				ABE5BED11DEF3B990036F093 /* kit2.png in Resources */,
 				ABF9D3BD1DCDD728001FC552 /* Unchecked@2x.png in Resources */,
 				ABF9D3C91DCDD728001FC552 /* 2.png in Resources */,
 				ABF9D3C21DCDD728001FC552 /* Heart-icon.png in Resources */,
+				ABE5BED41DEF3B990036F093 /* kit5.png in Resources */,
 				ABF9D3C41DCDD728001FC552 /* Photo-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,6 +671,8 @@
 			files = (
 				AB1C27171DB9260C001D7B82 /* AKGroupViewController.m in Sources */,
 				ABC03F961DD0DD5200386218 /* VKMessageVC.m in Sources */,
+				ABE5BEDB1DF0534D0036F093 /* LineLayout.m in Sources */,
+				ABFCFFF41DEDEAF30005AB39 /* VKPhotosGroupCell.m in Sources */,
 				ABFCFF0A1DEB35020005AB39 /* DetailViewController.m in Sources */,
 				AB1C26971DB7D2D2001D7B82 /* ViewController.m in Sources */,
 				ABF9CED41DDCACA2001204FF /* VKCommentsController.m in Sources */,
@@ -624,9 +690,11 @@
 				AB2BB7BF1DE88D220078F17A /* UITableView+ScrolledToBottom.m in Sources */,
 				ABF9D3A01DCDD4B2001FC552 /* VKAddPostCell.m in Sources */,
 				AB1C26941DB7D2D2001D7B82 /* AppDelegate.m in Sources */,
+				ABFCFFF71DEDEBDA0005AB39 /* VKPhotosGroupTC.m in Sources */,
 				AB21BBED1DC10E9800E215B7 /* VKGroup.m in Sources */,
 				ABF9CEFD1DDE0AF3001204FF /* VKComment.m in Sources */,
 				ABF9CE961DDB6EF0001204FF /* VKCommentCell.m in Sources */,
+				ABE5BEC51DEF2D2A0036F093 /* VKAlbum.m in Sources */,
 				AB1C27141DB911E8001D7B82 /* AKUser.m in Sources */,
 				AB1C27201DBA38CE001D7B82 /* VKPost.m in Sources */,
 				ABF9CE931DDB2D3C001204FF /* VKPostDetailCell.m in Sources */,
@@ -783,6 +851,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TV52855HY8;
 				INFOPLIST_FILE = DZApiVK/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ak.freelance.DZApiVK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -796,6 +865,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TV52855HY8;
 				INFOPLIST_FILE = DZApiVK/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ak.freelance.DZApiVK;
 				PRODUCT_NAME = "$(TARGET_NAME)";

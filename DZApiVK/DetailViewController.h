@@ -14,6 +14,12 @@
 @property (strong, nonatomic) UIImage* photo;
 - (IBAction)backAction:(id)sender;
 
+@property (assign, nonatomic) CGFloat previousScale;
+@property (assign, nonatomic) CGFloat previousRotation;
+
+
+@property (assign, nonatomic) CGFloat beginX;
+@property (assign, nonatomic) CGFloat beginY;
 
 
 @end

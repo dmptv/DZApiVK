@@ -32,7 +32,6 @@
 
 @property (strong, nonatomic) NSMutableArray* postArray;
 @property (assign, nonatomic) BOOL firstTimeAppear;
-@property (assign, nonatomic) BOOL loadingData;
 @property (nonatomic, strong) UIRefreshControl *topRefreshControl;
 
 @property (strong, nonatomic) VKPost* post;
@@ -159,8 +158,8 @@ static NSInteger postsInRequest = 10;
             
             AKPostCell* cell = (AKPostCell*)[tableView dequeueReusableCellWithIdentifier:identifier];
             
-            NSString* likes = [NSString stringWithFormat:@"%lu", post.likesCount];
-            NSString* comments = [NSString stringWithFormat:@"%lu", post.commentsCount];
+            NSString* likes = [NSString stringWithFormat:@"%lu", (long)post.likesCount];
+            NSString* comments = [NSString stringWithFormat:@"%lu", (long)post.commentsCount];
             
             cell.postCellLabel.text = post.text;
             [cell.addLikeButton    setTitle:likes    forState:UIControlStateNormal];
@@ -226,8 +225,8 @@ static NSInteger postsInRequest = 10;
             
             VKPostCell1* cell = (VKPostCell1*)[tableView dequeueReusableCellWithIdentifier:identifier1];
             
-            NSString* likes = [NSString stringWithFormat:@"%lu", post.likesCount];
-            NSString* comments = [NSString stringWithFormat:@"%lu", post.commentsCount];
+            NSString* likes = [NSString stringWithFormat:@"%lu", (long)post.likesCount];
+            NSString* comments = [NSString stringWithFormat:@"%lu", (long)post.commentsCount];
             
             cell.postCellLabel.text = post.text;
             [cell.addLikeButton    setTitle:likes    forState:UIControlStateNormal];
@@ -401,12 +400,11 @@ static NSInteger postsInRequest = 10;
     
     DetailViewController* vc = (DetailViewController *)[nav topViewController];
     vc.photo = [[UIImage alloc] init];
-    
     vc.photo = photoView.image;
     
     [self presentViewController:nav animated:NO completion:nil];
-    
 }
+
 
 
 
@@ -414,27 +412,47 @@ static NSInteger postsInRequest = 10;
 
 - (void) getPostsFromServer {
     
-    [[AKServerManager sharedManager]
-     getGroupWall:@"58860049"           // 58860049 5670544 131176878
-     withOffset:[self.postArray count]
-     count:postsInRequest
-     onSucces:^(NSArray *posts) {
-         [self.postArray addObjectsFromArray:posts];
-         
-         NSMutableArray* newPaths = [NSMutableArray array];
-         
-         // начинаем с существующих рядов и до скольки должно быть рядов
-         for (int i = (int)[self.postArray count] - (int)[posts count]; i < [self.postArray count]; i++) {
-             [newPaths addObject:[NSIndexPath indexPathForRow:i inSection:1]];
+    if (self.firstTimeAppear != YES) {
+        self.firstTimeAppear = YES;
+        
+        [[AKServerManager sharedManager]
+         getGroupWall:@"58860049"           // 58860049 5670544 131176878
+         withOffset:[self.postArray count]
+         count:postsInRequest
+         onSucces:^(NSArray *posts) {
+             [self.postArray addObjectsFromArray:posts];
+             
+             NSMutableArray* newPaths = [NSMutableArray array];
+             
+             // начинаем с существующих рядов и до скольки должно быть рядов
+             for (int i = (int)[self.postArray count] - (int)[posts count];
+                  i < [self.postArray count]; i++) {
+                 [newPaths addObject:[NSIndexPath indexPathForRow:i inSection:1]];
+             }
+             
+             [self.tableView beginUpdates];
+             [self.tableView insertRowsAtIndexPaths:newPaths
+                                   withRowAnimation:UITableViewRowAnimationTop];
+             [self.tableView endUpdates];
+             self.firstTimeAppear = NO;
          }
-         
-         [self.tableView beginUpdates];
-         [self.tableView insertRowsAtIndexPaths:newPaths withRowAnimation:UITableViewRowAnimationTop];
-         [self.tableView endUpdates];
-     }
-     onFailure:^(NSError *error) {
-         NSLog(@"error = %@", [error localizedDescription]);
-     }];
+         onFailure:^(NSError *error) {
+             NSLog(@"error = %@", [error localizedDescription]);
+         }];
+    }
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void) scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    if ((scrollView.contentOffset.y + scrollView.frame.size.height) >=
+        self.tableView.contentSize.height - scrollView.frame.size.height) {
+        if (self.firstTimeAppear != YES) {
+            [self getPostsFromServer];
+        }
+        
+    }
 }
 
 
@@ -442,61 +460,74 @@ static NSInteger postsInRequest = 10;
 
 - (void) refreshBottom {
     
-    double delayInSeconds = 0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
-        [[AKServerManager sharedManager]
-         getGroupWall:@"58860049"
-         withOffset:[self.postArray count]
-         count:postsInRequest
-         onSucces:^(NSArray *posts) {
-             
-             [self.postArray addObjectsFromArray:posts];
-             NSMutableArray* newPaths = [NSMutableArray array];
-             
-               // начинаем с существующих рядов и до скольки должно быть рядов
-             for (int i = (int)[self.postArray count] - (int)[posts count]; i < [self.postArray count]; i++) {
-                 [newPaths addObject:[NSIndexPath indexPathForRow:i inSection:1]];
-             }
-             
-             [self.tableView beginUpdates];
-             [self.tableView insertRowsAtIndexPaths:newPaths withRowAnimation:UITableViewRowAnimationTop];
-             [self.tableView endUpdates];
-         }
-         onFailure:^(NSError *error) {
-             NSLog(@"error = %@", [error localizedDescription]);
-         }];
+    if (self.firstTimeAppear != YES) {
+        self.firstTimeAppear = YES;
         
-        [self.tableView.bottomRefreshControl endRefreshing];
-    });
+        double delayInSeconds = 0;
+        dispatch_time_t popTime =
+        dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
+            [[AKServerManager sharedManager]
+             getGroupWall:@"58860049"
+             withOffset:[self.postArray count]
+             count:postsInRequest
+             onSucces:^(NSArray *posts) {
+                 
+                 [self.postArray addObjectsFromArray:posts];
+                 NSMutableArray* newPaths = [NSMutableArray array];
+                 
+                 // начинаем с существующих рядов и до скольки должно быть рядов
+                 for (int i = (int)[self.postArray count] - (int)[posts count];
+                      i < [self.postArray count]; i++) {
+                     [newPaths addObject:[NSIndexPath indexPathForRow:i inSection:1]];
+                 }
+                 
+                 [self.tableView beginUpdates];
+                 [self.tableView insertRowsAtIndexPaths:newPaths
+                                       withRowAnimation:UITableViewRowAnimationTop];
+                 [self.tableView endUpdates];
+                 self.firstTimeAppear = NO;
+             }
+             onFailure:^(NSError *error) {
+                 NSLog(@"error = %@", [error localizedDescription]);
+             }];
+            
+            [self.tableView.bottomRefreshControl endRefreshing];
+        });
+    }
 }
 
 
 - (void) refreshWall {
-    
-    [[AKServerManager sharedManager] getGroupWall:@"58860049"
-                                       withOffset:0
-                                            count:MAX(postsInRequest, [self.postArray count])
-                                         onSucces:^(NSArray *posts) {
-                                             [self.postArray removeAllObjects];
-                                             [self.postArray addObjectsFromArray:posts];
-                                             
-                                             [self.tableView reloadData];
-                                             [self.refreshControl endRefreshing];
-                                         }
-                                        onFailure:^(NSError *error) {
-                                            NSLog(@"error = %@", [error localizedDescription]);
-                                            [self.refreshControl endRefreshing];
-                                        }];
+    if (self.firstTimeAppear != YES) {
+        self.firstTimeAppear = YES;
+        
+        [[AKServerManager sharedManager]
+         getGroupWall:@"58860049"
+         withOffset:0
+         count:MAX(postsInRequest, [self.postArray count])
+         onSucces:^(NSArray *posts) {
+             [self.postArray removeAllObjects];
+             [self.postArray addObjectsFromArray:posts];
+             
+             [self.tableView reloadData];
+             [self.refreshControl endRefreshing];
+             self.firstTimeAppear = NO;
+         }
+         onFailure:^(NSError *error) {
+             NSLog(@"error = %@", [error localizedDescription]);
+             [self.refreshControl endRefreshing];
+         }];
+    }
 }
 
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter]
      removeObserver:self
-     name:UIContentSizeCategoryDidChangeNotification
-     object:nil];
+               name:UIContentSizeCategoryDidChangeNotification
+             object:nil];
 }
 
 
@@ -506,7 +537,7 @@ static NSInteger postsInRequest = 10;
      // Get the new view controller using [segue destinationViewController].
 
  }
- 
+
 
 
 

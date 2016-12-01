@@ -113,6 +113,7 @@ static NSString *commentIdentifier3 =  @"AddComCell";
                 cell = [[VKPostDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:commentIdentifier];
             }
             [self configureCell:cell forRowAtIndexPath:indexPath];
+        
             return cell;
 
     } else if (indexPath.section == 1) {
@@ -170,7 +171,7 @@ static NSString *commentIdentifier3 =  @"AddComCell";
 - (void) configureCell:(VKPostDetailCell *)cell  forRowAtIndexPath:(NSIndexPath *)indexPath {
 
     VKPost* post = self.post;
-    NSString* likes = [NSString stringWithFormat:@"%lu", post.likesCount];
+    NSString* likes = [NSString stringWithFormat:@"%lu", (long)post.likesCount];
     
     cell.textBody.text = post.text;
     cell.likesLabel.text = likes;
@@ -228,6 +229,7 @@ static NSString *commentIdentifier3 =  @"AddComCell";
     
       // установим фото из атташментс
     [self photosFromPost:post inCell:cell];
+    
 
        // Отправка сообщений автору поста
     UITapGestureRecognizer* tapUserImageGesture =
@@ -269,10 +271,13 @@ static NSString *commentIdentifier3 =  @"AddComCell";
             
             UIImageView* imageView = [tempArray objectAtIndex:i++];
             
-//            UITapGestureRecognizer *tapGesture =
-//            [[UITapGestureRecognizer alloc] initWithTarget:self
-//                                                    action:@selector(openImageVC:)];
-//            [imageView addGestureRecognizer:tapGesture];
+            // откроем фото атташмент по тапу
+            imageView.userInteractionEnabled = YES;
+            
+            UITapGestureRecognizer *tapGesture =
+            [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                    action:@selector(openImageVC:)];
+            [imageView addGestureRecognizer:tapGesture];
             
             // если используем photo
             if (photo.src_big) {
@@ -291,7 +296,6 @@ static NSString *commentIdentifier3 =  @"AddComCell";
                 if (i == countArray) {
                     break;
                 }
-     
             }
             
              //чтобы выходил из метода раньше чем все imageView.hidden
@@ -495,16 +499,20 @@ static NSString *commentIdentifier3 =  @"AddComCell";
 }
 
 
-- (void) openImageVC:(UITapGestureRecognizer*)recognizer {
+- (void)openImageVC:(UITapGestureRecognizer*)recognizer {
     
     UIImageView* photoView = (UIImageView*)recognizer.view;
-
-    DetailViewController* vc =
-    [self.storyboard instantiateViewControllerWithIdentifier:@"DetailPhoto"];
     
-    vc.photoImageView.image = photoView.image;
- 
-    [self.navigationController pushViewController:vc animated:YES];
+    UINavigationController* nav =
+    [self.storyboard instantiateViewControllerWithIdentifier:@"DetailPhotoNav"];
+    
+    [nav setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    
+    DetailViewController* vc = (DetailViewController *)[nav topViewController];
+    vc.photo = [[UIImage alloc] init];
+    vc.photo = photoView.image;
+    
+    [self presentViewController:nav animated:NO completion:nil];
 }
 
 
